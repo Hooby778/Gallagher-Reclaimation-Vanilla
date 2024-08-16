@@ -19,6 +19,13 @@ app.get('/jobname', controllers.getJobs);
 // delete /jobname/*
 // get /timesheets
 app.post('/timesheets', controllers.postTimesheet);
+app.post('/pass', (req, res) => {
+  if (req.body.pass === process.env.ADMIN_PASSWORD) {
+    res.status(200).send('success')
+  } else {
+    res.status(500).send('fail')
+  }
+})
 
 
 const PORT = process.env.PORT || 3000;

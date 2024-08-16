@@ -5,7 +5,7 @@ import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 
-const Home = () => {
+const Home = ( { handlePageChange } ) => {
   const [employeeList, setmployeeList] = React.useState(null);
   const [jobList, setJobList] = React.useState(null);
   const [startDate, setStartDate] = React.useState(new Date());
@@ -134,7 +134,9 @@ const Home = () => {
         window.alert("Timesheet Submitted!")
         setFilledJobList([]);
       }}>Submit</button>
-      <button>Admin</button>
+      <button onClick={() => {
+        handlePageChange('login');
+      }}>Admin</button>
     </div>
     )
   }
