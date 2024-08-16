@@ -6,7 +6,6 @@ mongoose.connect(`mongodb://127.0.0.1:27017/Gallagher-Reclaimation`);
 const jobSchema = new mongoose.Schema(
   {
     name: String,
-    location: String,
     wage_decisions: Object
   },
   { timestamps: true }

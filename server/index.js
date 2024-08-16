@@ -11,12 +11,14 @@ app.use(express.json());
 
 // TODO: Define routes
 app.get('/', () => {});
-// get /employee/*
-// post /employee/*
-// delete /employee/*
-// get /jobname/*
+app.get('/employees', controllers.getEmployees);
+// post /employees/*
+// delete /employees/*
+app.get('/jobname', controllers.getJobs);
 // post /jobname/*
 // delete /jobname/*
+// get /timesheets
+app.post('/timesheets', controllers.postTimesheet);
 
 
 const PORT = process.env.PORT || 3000;
