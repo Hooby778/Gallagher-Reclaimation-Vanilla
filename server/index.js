@@ -12,12 +12,12 @@ app.use(express.json());
 // TODO: Define routes
 app.get('/', () => {});
 app.get('/employees', controllers.getEmployees);
-// post /employees/*
-// delete /employees/*
+app.post('/employees', controllers.postEmployees);
+app.delete('/employees', controllers.deleteEmployees);
 app.get('/jobname', controllers.getJobs);
-// post /jobname/*
-// delete /jobname/*
-// get /timesheets
+app.post('/jobname', controllers.postJobs);
+app.delete('/jobname', controllers.deleteJobs);
+app.get('/timesheets', controllers.getTimesheet);
 app.post('/timesheets', controllers.postTimesheet);
 app.post('/pass', (req, res) => {
   if (req.body.pass === process.env.ADMIN_PASSWORD) {

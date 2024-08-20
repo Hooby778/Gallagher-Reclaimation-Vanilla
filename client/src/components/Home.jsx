@@ -12,6 +12,7 @@ const Home = ( { handlePageChange } ) => {
   const [filledJobList, setFilledJobList] = React.useState([]);
   const [startTime, setStartTime] = React.useState('8:00');
   const [endTime, setEndTime] = React.useState('17:00');
+  const [pay, setPay] = React.useState([])
   React.useState(() => {
     Axios({
       method: 'get',
@@ -25,7 +26,7 @@ const Home = ( { handlePageChange } ) => {
       setmployeeList(empObj);
     })
     .catch((err) => {
-
+      window.alert('error fetching employees');
     })
   }, [])
   React.useState(() => {
@@ -45,7 +46,18 @@ const Home = ( { handlePageChange } ) => {
   return (
     <div className="">
       <p>Name:</p>
-      <input list="empNameList" name="empNames" id="empList"/>
+      <input list="empNameList" name="empNames" id="empList" onChange={() => {
+        if (employeeList[document.getElementById('empList').value]) {
+          setPay(['Base Pay: ' + employeeList[document.getElementById('empList').value]]);
+        } else {
+          setPay([]);
+        }
+      }}/>
+      {
+        pay.map((item) => {
+          return <p>{item}</p>
+        })
+      }
       <datalist id="empNameList">
         {
           Object.keys(employeeList).map((item) => {
@@ -112,7 +124,7 @@ const Home = ( { handlePageChange } ) => {
         var newArray = filledJobList.slice(0);
         newArray.push(outObj);
         setFilledJobList(newArray);
-      }}>Add Job</button>
+      }}>Add Classification</button>
       {
         filledJobList.map((item, index) => {
           return <ul>
