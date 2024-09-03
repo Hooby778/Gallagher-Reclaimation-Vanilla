@@ -44,9 +44,10 @@ const Home = ( { handlePageChange } ) => {
   }, [])
   if (employeeList && jobList) {
   return (
-    <div className="">
-      <p>Name:</p>
-      <input list="empNameList" name="empNames" id="empList" onChange={() => {
+    <div className="mx-auto w-1/2 min-w-[410px] text-center">
+      <img className="mx-auto w-[400px] pr-[20px]" src="./images/gallreclaim.png"/>
+      <p className="font-bold text-xl mb-[10px]">Name:</p>
+      <input className="border-2 border-black rounded w-[200px] h-[33px] text-center" list="empNameList" name="empNames" id="empList" onChange={() => {
         if (employeeList[document.getElementById('empList').value]) {
           setPay(['Base Pay: ' + employeeList[document.getElementById('empList').value]]);
         } else {
@@ -55,7 +56,7 @@ const Home = ( { handlePageChange } ) => {
       }}/>
       {
         pay.map((item) => {
-          return <p>{item}</p>
+          return <p className="mt-[10px]">{item}</p>
         })
       }
       <datalist id="empNameList">
@@ -65,18 +66,18 @@ const Home = ( { handlePageChange } ) => {
           })
         }
       </datalist>
-      <p>Date:</p>
-      <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
-      <p>Job Name:</p>
-      <select id="jobs">
+      <p className="font-bold text-xl my-[10px]">Date:</p>
+      <DatePicker className="border-2 border-black rounded w-[200px] h-[33px] text-center" id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
+      <p className="font-bold text-xl my-[10px]">Job Name:</p>
+      <select className="border-2 border-black rounded w-[200px] h-[33px] text-center" id="jobs">
         {
           Object.keys(jobList).map((item) => {
             return <option value={item}>{item}</option>
           })
         }
       </select>
-      <p>Classification:</p>
-      <select id="classes">
+      <p className="font-bold text-xl my-[10px]">Classification:</p>
+      <select className="border-2 border-black rounded w-[200px] h-[33px] text-center" id="classes">
         <option value="Clean Up">Clean Up</option>
         <option value="Equipment Operator">Equipment Operator</option>
         <option value="General Labor">General Labor</option>
@@ -94,10 +95,10 @@ const Home = ( { handlePageChange } ) => {
         <option value="E">E = Laborer: Erosion Control Laborer</option>
         <option value="F">F = Operator: Power Equipment/Tractor</option>
       </select>
-      <p>Start Time:</p>
-      <TimePicker id="startTime" value={startTime} onChange={setStartTime}/>
-      <p>End Time:</p>
-      <TimePicker value={endTime} onChange={setEndTime}/>
+      <p className="font-bold text-xl my-[10px]">Start Time:</p>
+      <TimePicker className="border-2 border-black rounded w-[200px]" id="startTime" value={startTime} onChange={setStartTime}/>
+      <p className="font-bold text-xl my-[10px]">End Time:</p>
+      <TimePicker className="border-2 border-black rounded w-[200px]" value={endTime} onChange={setEndTime}/>
       <button onClick={() => {
         var empName = document.getElementById('empList').value;
         var jobName = document.getElementById('jobs').value;
@@ -124,18 +125,18 @@ const Home = ( { handlePageChange } ) => {
         var newArray = filledJobList.slice(0);
         newArray.push(outObj);
         setFilledJobList(newArray);
-      }}>Add Classification</button>
+      }} className="block w-[150px] mx-auto bg-primary rounded p-2 mt-4">Add Classification</button>
       {
         filledJobList.map((item, index) => {
           return <ul>
-            <li>Job {index + 1}:</li>
-            <li>classification: {item.classification}</li>
-            <li>hours worked: {item.hours}</li>
-            <li>pay earned: {item.pay_earned}</li>
+            <li className="font-bold text-xl my-[10px]">Job {index + 1}:</li>
+            <li className="text-xl">classification: {item.classification}</li>
+            <li className="text-xl">hours worked: {item.hours}</li>
+            <li className="text-xl">pay earned: {item.pay_earned}</li>
           </ul>
         })
       }
-      <button onClick={() => {
+      <button className="block w-[150px] mx-auto bg-primary rounded p-2 mt-4" onClick={() => {
         for (var i = 0; i < filledJobList.length; i++) {
           Axios({
             method: 'post',
@@ -146,7 +147,7 @@ const Home = ( { handlePageChange } ) => {
         window.alert("Timesheet Submitted!")
         setFilledJobList([]);
       }}>Submit</button>
-      <button onClick={() => {
+      <button className="block w-[150px] mx-auto bg-secondary rounded p-2 mt-4 text-white" onClick={() => {
         handlePageChange('login');
       }}>Admin</button>
     </div>

@@ -33,7 +33,9 @@ var Admin = function Admin(_ref) {
     activeForm = _React$useState2[0],
     setActiveForm = _React$useState2[1];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "mx-auto w-1/2 min-w-[410px] text-center",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      className: "mb-[20px] block w-[150px] mx-auto bg-secondary rounded p-2 mt-4 text-white",
       onClick: function onClick() {
         handlePageChange('home');
       },
@@ -56,6 +58,7 @@ var Admin = function Admin(_ref) {
           id: "addEmp",
           value: "addEmp"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "text-xl ml-[5px]",
           "for": "addEmp",
           children: "Add Employee"
         })]
@@ -66,6 +69,7 @@ var Admin = function Admin(_ref) {
           id: "delEmp",
           value: "delEmp"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "text-xl ml-[5px]",
           "for": "delEmp",
           children: "Remove Employee"
         })]
@@ -76,6 +80,7 @@ var Admin = function Admin(_ref) {
           id: "addJob",
           value: "addJob"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "text-xl ml-[5px]",
           "for": "JobEmp",
           children: "Add Job"
         })]
@@ -86,6 +91,7 @@ var Admin = function Admin(_ref) {
           id: "delJob",
           value: "delJob"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "text-xl ml-[5px]",
           "for": "delJob",
           children: "Remove Job"
         })]
@@ -96,6 +102,7 @@ var Admin = function Admin(_ref) {
           id: "getTime",
           value: "getTime"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "text-xl ml-[5px]",
           "for": "getTime",
           children: "Retrieve Timesheet"
         })]
@@ -254,10 +261,15 @@ var Home = function Home(_ref) {
   }, []);
   if (employeeList && jobList) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "mx-auto w-1/2 min-w-[410px] text-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        className: "mx-auto w-[400px] pr-[20px]",
+        src: "./images/gallreclaim.png"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-bold text-xl mb-[10px]",
         children: "Name:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         list: "empNameList",
         name: "empNames",
         id: "empList",
@@ -270,6 +282,7 @@ var Home = function Home(_ref) {
         }
       }), pay.map(function (item) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "mt-[10px]",
           children: item
         });
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("datalist", {
@@ -280,16 +293,20 @@ var Home = function Home(_ref) {
           });
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Date:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((react_datepicker__WEBPACK_IMPORTED_MODULE_5___default()), {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         id: "date",
         selected: startDate,
         onChange: function onChange(date) {
           return setStartDate(date);
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Job Name:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         id: "jobs",
         children: Object.keys(jobList).map(function (item) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
@@ -298,8 +315,10 @@ var Home = function Home(_ref) {
           });
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Classification:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         id: "classes",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
           value: "Clean Up",
@@ -351,14 +370,18 @@ var Home = function Home(_ref) {
           children: "F = Operator: Power Equipment/Tractor"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Start Time:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_time_picker__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        className: "border-2 border-black rounded w-[200px]",
         id: "startTime",
         value: startTime,
         onChange: setStartTime
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "End Time:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_time_picker__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        className: "border-2 border-black rounded w-[200px]",
         value: endTime,
         onChange: setEndTime
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
@@ -389,20 +412,26 @@ var Home = function Home(_ref) {
           newArray.push(outObj);
           setFilledJobList(newArray);
         },
+        className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
         children: "Add Classification"
       }), filledJobList.map(function (item, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+            className: "font-bold text-xl my-[10px]",
             children: ["Job ", index + 1, ":"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+            className: "text-xl",
             children: ["classification: ", item.classification]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+            className: "text-xl",
             children: ["hours worked: ", item.hours]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+            className: "text-xl",
             children: ["pay earned: ", item.pay_earned]
           })]
         });
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
         onClick: function onClick() {
           for (var i = 0; i < filledJobList.length; i++) {
             (0,axios__WEBPACK_IMPORTED_MODULE_4__["default"])({
@@ -416,6 +445,7 @@ var Home = function Home(_ref) {
         },
         children: "Submit"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        className: "block w-[150px] mx-auto bg-secondary rounded p-2 mt-4 text-white",
         onClick: function onClick() {
           handlePageChange('login');
         },
@@ -449,12 +479,16 @@ __webpack_require__.r(__webpack_exports__);
 var Login = function Login(_ref) {
   var handlePageChange = _ref.handlePageChange;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-col justify-center align-middle mx-auto h-screen w-1/2 min-w-[410px] text-center",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl",
       children: "Enter Password:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "mx-auto border-2 border-black rounded w-[200px] h-[33px] text-center",
       type: "password",
       id: "passform"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
       onClick: function onClick() {
         (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
           method: 'post',
@@ -497,14 +531,19 @@ __webpack_require__.r(__webpack_exports__);
 var AddEmp = function AddEmp() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Name:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "nameForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Base Pay:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "payForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
       onClick: function onClick() {
         (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
           method: 'post',
@@ -548,34 +587,49 @@ __webpack_require__.r(__webpack_exports__);
 var AddJob = function AddJob() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Name:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "nameForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Wage Decision A:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "wageAForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Wage Decision B:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "wageBForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Wage Decision C:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "wageCForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Wage Decision D:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "wageDForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Wage Decision E:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "wageEForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "font-bold text-xl my-[10px]",
       children: "Wage Decision F:"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
       id: "wageFForm"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
       onClick: function onClick() {
         (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
           method: 'post',
@@ -705,8 +759,10 @@ var DelEmp = function DelEmp() {
   if (employeeList) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Employee Name:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         list: "empNameList",
         name: "empNames",
         id: "nameForm"
@@ -718,6 +774,7 @@ var DelEmp = function DelEmp() {
           });
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
         onClick: function onClick() {
           (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
             method: 'delete',
@@ -755,32 +812,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
 var DelJob = function DelJob() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      children: "Name:"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-      id: "nameForm"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-      onClick: function onClick() {
-        (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
-          method: 'delete',
-          url: '/jobname',
-          data: {
-            name: document.getElementById('nameForm').value
-          }
-        }).then(function () {
-          window.alert('Job Deleted');
-        })["catch"](function () {
-          window.alert('Job Not Found');
-        });
-      },
-      children: "Delete"
-    })]
-  });
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState(null),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    jobList = _React$useState2[0],
+    setJobList = _React$useState2[1];
+  react__WEBPACK_IMPORTED_MODULE_0___default().useState(function () {
+    (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      method: 'get',
+      url: '/jobname'
+    }).then(function (result) {
+      var jobObj = {};
+      for (var i = 0; i < result.data.length; i++) {
+        jobObj[result.data[i].name] = result.data[i].wage_decisions;
+      }
+      setJobList(jobObj);
+    })["catch"](function (err) {
+      window.alert('error fetching jobs');
+    });
+  }, []);
+  if (jobList) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
+        children: "Name:"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
+        list: "jobNameList",
+        name: "jobNames",
+        id: "nameForm"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("datalist", {
+        id: "jobNameList",
+        children: Object.keys(jobList).map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            value: item
+          });
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
+        onClick: function onClick() {
+          (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
+            method: 'delete',
+            url: '/jobname',
+            data: {
+              name: document.getElementById('nameForm').value
+            }
+          }).then(function () {
+            window.alert('Job Deleted');
+          })["catch"](function () {
+            window.alert('Job Not Found');
+          });
+        },
+        children: "Delete"
+      })]
+    });
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DelJob);
 
@@ -843,8 +938,10 @@ var GetTime = function GetTime() {
   if (employeeList) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Employee Name:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         list: "empNameList",
         name: "empNames",
         id: "nameForm"
@@ -856,14 +953,17 @@ var GetTime = function GetTime() {
           });
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-bold text-xl my-[10px]",
         children: "Date:"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_datepicker__WEBPACK_IMPORTED_MODULE_3___default()), {
+        className: "border-2 border-black rounded w-[200px] h-[33px] text-center",
         id: "date",
         selected: startDate,
         onChange: function onChange(date) {
           return setStartDate(date);
         }
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        className: "block w-[150px] mx-auto bg-primary rounded p-2 mt-4",
         onClick: function onClick() {
           (0,axios__WEBPACK_IMPORTED_MODULE_2__["default"])({
             method: 'get',
@@ -887,24 +987,49 @@ var GetTime = function GetTime() {
         if (typeof item !== 'string') {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+              className: "font-bold text-xl my-[10px]",
               children: ["Classification ", index + 1, ":"]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Employee Name: ", item.name]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Employee Name:"
+                }), " ", item.name]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Job Name: ", item.job_name]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Job Name:"
+                }), " ", item.job_name]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Classification: ", item.classification]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Classification:"
+                }), " ", item.classification]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Date: ", item.date]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Date:"
+                }), " ", item.date]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Start Time: ", item.start_time]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Start Time:"
+                }), " ", item.start_time]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["End Time: ", item.end_time]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "End Time:"
+                }), " ", item.end_time]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Hours: ", item.hours]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Hours:"
+                }), " ", item.hours]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: ["Pay Earned: ", item.pay_earned]
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  className: "font-bold inline",
+                  children: "Pay Earned:"
+                }), " ", item.pay_earned]
               })]
             })]
           });

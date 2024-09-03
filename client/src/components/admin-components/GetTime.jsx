@@ -24,8 +24,8 @@ const GetTime = () => {
   })
   if (employeeList) {
     return (<div>
-      <p>Employee Name:</p>
-      <input list="empNameList" name="empNames" id="nameForm"/>
+      <p className="font-bold text-xl my-[10px]">Employee Name:</p>
+      <input className="border-2 border-black rounded w-[200px] h-[33px] text-center" list="empNameList" name="empNames" id="nameForm"/>
       <datalist id="empNameList">
         {
           Object.keys(employeeList).map((item) => {
@@ -33,9 +33,9 @@ const GetTime = () => {
           })
         }
       </datalist>
-      <p>Date:</p>
-      <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
-      <button onClick={() => {
+      <p className="font-bold text-xl my-[10px]">Date:</p>
+      <DatePicker className="border-2 border-black rounded w-[200px] h-[33px] text-center" id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
+      <button className="block w-[150px] mx-auto bg-primary rounded p-2 mt-4" onClick={() => {
         Axios({
           method: 'get',
           url: '/timesheets',
@@ -60,16 +60,16 @@ const GetTime = () => {
           if (typeof item !== 'string') {
             return(
               <div>
-                <h3>Classification {index + 1}:</h3>
+                <h3 className="font-bold text-xl my-[10px]">Classification {index + 1}:</h3>
                 <ul>
-                  <li>Employee Name: {item.name}</li>
-                  <li>Job Name: {item.job_name}</li>
-                  <li>Classification: {item.classification}</li>
-                  <li>Date: {item.date}</li>
-                  <li>Start Time: {item.start_time}</li>
-                  <li>End Time: {item.end_time}</li>
-                  <li>Hours: {item.hours}</li>
-                  <li>Pay Earned: {item.pay_earned}</li>
+                  <li><div className="font-bold inline">Employee Name:</div> {item.name}</li>
+                  <li><div className="font-bold inline">Job Name:</div> {item.job_name}</li>
+                  <li><div className="font-bold inline">Classification:</div> {item.classification}</li>
+                  <li><div className="font-bold inline">Date:</div> {item.date}</li>
+                  <li><div className="font-bold inline">Start Time:</div> {item.start_time}</li>
+                  <li><div className="font-bold inline">End Time:</div> {item.end_time}</li>
+                  <li><div className="font-bold inline">Hours:</div> {item.hours}</li>
+                  <li><div className="font-bold inline">Pay Earned:</div> {item.pay_earned}</li>
                 </ul>
               </div>
             )

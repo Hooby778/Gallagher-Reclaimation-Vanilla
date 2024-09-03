@@ -21,8 +21,8 @@ const DelEmp = () => {
   })
   if (employeeList) {
     return (<div>
-        <p>Employee Name:</p>
-        <input list="empNameList" name="empNames" id="nameForm"/>
+        <p className="font-bold text-xl my-[10px]">Employee Name:</p>
+        <input className="border-2 border-black rounded w-[200px] h-[33px] text-center" list="empNameList" name="empNames" id="nameForm"/>
         <datalist id="empNameList">
           {
             Object.keys(employeeList).map((item) => {
@@ -30,7 +30,7 @@ const DelEmp = () => {
             })
           }
         </datalist>
-      <button onClick={() => {
+      <button className="block w-[150px] mx-auto bg-primary rounded p-2 mt-4" onClick={() => {
         Axios({
           method: 'delete',
           url: '/employees',
