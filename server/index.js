@@ -19,6 +19,7 @@ app.post('/jobname', controllers.postJobs);
 app.delete('/jobname', controllers.deleteJobs);
 app.get('/timesheets', controllers.getTimesheet);
 app.post('/timesheets', controllers.postTimesheet);
+app.get('/multiTimesheets', controllers.getMultiTimesheet);
 app.post('/pass', (req, res) => {
   if (req.body.pass === process.env.ADMIN_PASSWORD) {
     res.status(200).send('success')

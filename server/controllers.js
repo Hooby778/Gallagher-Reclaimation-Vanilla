@@ -81,3 +81,57 @@ exports.getTimesheet = (req, res) => {
     res.status(500).send(err);
   })
 }
+
+exports.getMultiTimesheet = (req, res) => {
+  var rollingSheet = [];
+  Timesheet.find({date: req.query.date[0]})
+  .then((monResults) => {
+    rollingSheet.push(monResults);
+    Timesheet.find({date: req.query.date[1]})
+    .then((tueResults) => {
+      rollingSheet.push(tueResults);
+      Timesheet.find({date: req.query.date[2]})
+      .then((wedResults) => {
+        rollingSheet.push(wedResults);
+        Timesheet.find({date: req.query.date[3]})
+        .then((thuResults) => {
+          rollingSheet.push(thuResults);
+          Timesheet.find({date: req.query.date[4]})
+          .then((friResults) => {
+            rollingSheet.push(friResults);
+            Timesheet.find({date: req.query.date[5]})
+            .then((satResults) => {
+              rollingSheet.push(satResults);
+              Timesheet.find({date: req.query.date[6]})
+              .then((sunResults) => {
+                rollingSheet.push(sunResults);
+                res.status(200).send(rollingSheet);
+              })
+              .catch((err) => {
+                res.status(500).send(err);
+              })
+            })
+            .catch((err) => {
+              res.status(500).send(err);
+            })
+          })
+          .catch((err) => {
+            res.status(500).send(err);
+          })
+        })
+        .catch((err) => {
+          res.status(500).send(err);
+        })
+      })
+      .catch((err) => {
+        res.status(500).send(err);
+      })
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    })
+  })
+  .catch((err) => {
+    res.status(500).send(err);
+  })
+}

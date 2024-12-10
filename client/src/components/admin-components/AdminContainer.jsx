@@ -4,6 +4,7 @@ import DelEmp from './DelEmp.jsx';
 import AddJob from './AddJob.jsx';
 import DelJob from './DelJob.jsx';
 import GetTime from './GetTime.jsx';
+import GetTS from './GetTS.jsx';
 
 const AdminContainer = ( { page } ) => {
   if (page === 'addEmp') {
@@ -25,6 +26,10 @@ const AdminContainer = ( { page } ) => {
   } else if (page === 'getTime') {
     return (<div>
       <GetTime />
+    </div>)
+  } else if (page === 'getTS') {
+    return (<div>
+      <GetTS />
     </div>)
   }
 }

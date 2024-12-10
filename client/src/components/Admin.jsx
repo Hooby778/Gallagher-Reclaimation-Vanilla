@@ -6,7 +6,7 @@ const Admin = ( { handlePageChange } ) => {
   const [activeForm, setActiveForm] = React.useState('');
 
   return (
-    <div className="mx-auto w-1/2 min-w-[410px] text-center">
+    <div className="mx-auto w-1/2 min-w-[900px] text-center">
       <button className="mb-[20px] block w-[150px] mx-auto bg-secondary rounded p-2 mt-4 text-white" onClick={() => {
         handlePageChange('home');
       }}>Home</button>
@@ -37,7 +37,11 @@ const Admin = ( { handlePageChange } ) => {
         </div>
         <div>
           <input type="radio" name="admin" id="getTime" value="getTime" />
-          <label className="text-xl ml-[5px]" for="getTime">Retrieve Timesheet</label>
+          <label className="text-xl ml-[5px]" for="getTime">Retrieve Timesheet By Day</label>
+        </div>
+        <div>
+          <input type="radio" name="admin" id="getTS" value="getTS" />
+          <label className="text-xl ml-[5px]" for="getTime">Retrieve Timesheet By Week</label>
         </div>
       </fieldset>
       <AdminContainer page={activeForm}/>
