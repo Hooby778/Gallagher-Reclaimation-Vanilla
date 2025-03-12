@@ -82,6 +82,17 @@ exports.getTimesheet = (req, res) => {
   })
 }
 
+exports.putTimesheet = (req, res) => {
+  //console.log(req.body);
+  Timesheet.findOneAndUpdate({"_id": req.body._id}, req.body)
+  .then((results) => {
+    res.status(200).send(results);
+  })
+  .catch((err) => {
+    res.status(500).send(err);
+  })
+}
+
 exports.getMultiTimesheet = (req, res) => {
   var rollingSheet = [];
   Timesheet.find({date: req.query.date[0]})
